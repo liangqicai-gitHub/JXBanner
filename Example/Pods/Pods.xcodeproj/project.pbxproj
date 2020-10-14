@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0496ED6325369F8E0090880C /* JXBannerLqcTransformLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496ED6225369F8E0090880C /* JXBannerLqcTransformLeft.swift */; };
+		0477F5FF2536EFEF00F9EFC0 /* JXBannerLqcTransformLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0477F5FE2536EFEF00F9EFC0 /* JXBannerLqcTransformLeft.swift */; };
 		09BF5E79E6E0B417AF23A30A9DE7285D /* JXPageControlChameleon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C66033A28AD66DEE2C1B2463961310 /* JXPageControlChameleon.swift */; };
 		09D280B6799C96D915ED9C1E32434F78 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B525D0AD5E0A11D5E730B4993B21C606 /* ConstraintRelation.swift */; };
 		14112D7E171D2BC28004C931AD1FE892 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CDE57BD9056C6F5333F4871F868BAC /* Foundation.framework */; };
@@ -122,7 +122,7 @@
 /* Begin PBXFileReference section */
 		0287752C5A6BFAD69522F171FE67C69D /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
 		02BB2DC76B097EEC8C0772D7AB32BA6F /* JXBannerPageControlBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JXBannerPageControlBuilder.swift; path = JXBanner/Classes/PageControl/JXBannerPageControlBuilder.swift; sourceTree = "<group>"; };
-		0496ED6225369F8E0090880C /* JXBannerLqcTransformLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JXBannerLqcTransformLeft.swift; sourceTree = "<group>"; };
+		0477F5FE2536EFEF00F9EFC0 /* JXBannerLqcTransformLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JXBannerLqcTransformLeft.swift; path = JXBanner/Classes/Banner/Transform/JXBannerLqcTransformLeft.swift; sourceTree = "<group>"; };
 		0909C73C5F9793C5958F609BFD074259 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B9D0BD258AB49A6465CD2F7F6F6A5E4 /* JXPageControlLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JXPageControlLine.swift; path = JXPageControl/Classes/Jump/JXPageControlLine.swift; sourceTree = "<group>"; };
 		0BC698E1DCA9EEEAE00B79B729098422 /* JXBannerTransformLinear.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JXBannerTransformLinear.swift; path = JXBanner/Classes/Banner/Transform/JXBannerTransformLinear.swift; sourceTree = "<group>"; };
@@ -309,10 +309,10 @@
 		5F9091E50BFE7A80A3754552433721C3 /* Transform */ = {
 			isa = PBXGroup;
 			children = (
+				0477F5FE2536EFEF00F9EFC0 /* JXBannerLqcTransformLeft.swift */,
 				42310C35D52E24EF9181491175573EC3 /* JXBannerTransformContext.swift */,
 				82642C69FAC8150A1598DA763667F6F7 /* JXBannerTransformCoverflow.swift */,
 				0BC698E1DCA9EEEAE00B79B729098422 /* JXBannerTransformLinear.swift */,
-				0496ED6225369F8E0090880C /* JXBannerLqcTransformLeft.swift */,
 				B39E3D92BE2A62D997729D73AAC67003 /* JXBannerTransfrom.swift */,
 			);
 			name = Transform;
@@ -817,7 +817,7 @@
 				E56814A1316B1DBE8189372EC63A1F98 /* JXBannerDataSource.swift in Sources */,
 				BF1BD297E3607D4F370393EA28BBFA10 /* JXBannerDelegate.swift in Sources */,
 				4DF57D07A1DBE6A8186362D381235B88 /* JXBannerLayout.swift in Sources */,
-				0496ED6325369F8E0090880C /* JXBannerLqcTransformLeft.swift in Sources */,
+				0477F5FF2536EFEF00F9EFC0 /* JXBannerLqcTransformLeft.swift in Sources */,
 				83297D5C55C30E8A8F4E534D849F4D60 /* JXBannerLayoutParams.swift in Sources */,
 				7AF79D96C04B786A85DC8DB9101F6909 /* JXBannerPageControlBuilder.swift in Sources */,
 				529BF8DBB4FAC7EEFF0720FEE89D8807 /* JXBannerPageControlDefault.swift in Sources */,
