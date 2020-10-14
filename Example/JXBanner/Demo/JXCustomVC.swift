@@ -34,6 +34,15 @@ class JXCustomVC: UIViewController {
         return banner
     }()
     
+    lazy var lqc_banner: JXBanner = {
+        let banner = JXBanner()
+        banner.placeholderImgView.image = UIImage(named: "banner_placeholder")
+        banner.indentify = "lqc_banner"
+        banner.delegate = self
+        banner.dataSource = self
+        return banner
+    }()
+    
     lazy var customBanner: JXBanner = {
         let banner = JXBanner()
         banner.placeholderImgView.image = UIImage(named: "banner_placeholder")
@@ -42,16 +51,20 @@ class JXCustomVC: UIViewController {
         return banner
     }()
     
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(linearBanner)
         view.addSubview(converflowBanner)
+        view.addSubview(lqc_banner)
         view.addSubview(customBanner)
         
         linearBanner.snp.makeConstraints {(maker) in
             maker.left.right.equalTo(view)
-            maker.height.equalTo(150)
+            maker.height.equalTo(100)
             maker.top.equalTo(view.snp_top).offset(100)
         }
         
@@ -60,10 +73,16 @@ class JXCustomVC: UIViewController {
             maker.top.equalTo(linearBanner.snp_bottom).offset(50)
         }
         
+        
+        lqc_banner.snp.makeConstraints {(maker) in
+            maker.left.right.height.equalTo(linearBanner)
+            maker.top.equalTo(converflowBanner.snp_bottom).offset(50)
+        }
+        
         customBanner.snp.makeConstraints {(maker) in
             maker.left.right.equalTo(linearBanner)
             maker.height.equalTo(200)
-            maker.top.equalTo(converflowBanner.snp_bottom).offset(50)
+            maker.top.equalTo(lqc_banner.snp_bottom).offset(50)
         }
         
         self.automaticallyAdjustsScrollViewInsets = false
@@ -86,7 +105,10 @@ extension JXCustomVC: JXBannerDataSource {
             }else if banner.indentify == "converflowBanner" {
                 return JXBannerCellRegister(type: JXBannerCell.self,
                                             reuseIdentifier: "ConverflowBannerCell")
-            }else {
+            }else if banner.indentify == "lqc_banner" {
+                return JXBannerCellRegister(type: JXBannerCell.self,
+                                            reuseIdentifier: "lqc_banner")
+            } else {
                 return JXBannerCellRegister(type: JXBannerCell.self,
                                             reuseIdentifier: "JXTransformCustomVCCell")
             }
@@ -130,6 +152,11 @@ extension JXCustomVC: JXBannerDataSource {
                     .timeInterval(3)
                     .cycleWay(.forward)
                     .isAutoPlay(true)
+            }else if banner.indentify == "lqc_banner" {
+                return params
+                    .timeInterval(3)
+                    .cycleWay(.forward)
+                    .isAutoPlay(true)
             }else {
                 return params
                     .timeInterval(3)
@@ -138,6 +165,9 @@ extension JXCustomVC: JXBannerDataSource {
             }
     }
     
+    
+    
+    
     func jxBanner(_ banner: JXBannerType,
                   layoutParams: JXBannerLayoutParams)
         -> JXBannerLayoutParams {
@@ -145,7 +175,7 @@ extension JXCustomVC: JXBannerDataSource {
             if banner.indentify == "linearBanner" {
                 return layoutParams
                     .layoutType(JXBannerTransformLinear())
-                    .itemSize(CGSize(width: 300, height: 150))
+                    .itemSize(CGSize(width: 300, height: 100))
                     .itemSpacing(10)
                     .rateOfChange(0.8)
                     .minimumScale(0.7)
@@ -154,11 +184,18 @@ extension JXCustomVC: JXBannerDataSource {
             }else if banner.indentify == "converflowBanner" {
                 return layoutParams
                     .layoutType(JXBannerTransformCoverflow())
-                    .itemSize(CGSize(width: 300, height: 150))
+                    .itemSize(CGSize(width: 300, height: 100))
                     .itemSpacing(0)
                     .maximumAngle(0.25)
                     .rateHorisonMargin(0.3)
                     .minimumAlpha(0.8)
+            }else if banner.indentify == "lqc_banner" {
+                let left = (UIScreen.main.bounds.width - 300 - 20) / -2
+                return layoutParams
+                    .layoutType(JXBannerLqcTransformLeft(left: left))
+                    .itemSize(CGSize(width: 300, height: 100))
+                    .itemSpacing(10)
+                    .minimumAlpha(0.5)
             }else {
                 return layoutParams
                     .layoutType(JXCustomTransform())
